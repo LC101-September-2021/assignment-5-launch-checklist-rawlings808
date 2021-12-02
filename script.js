@@ -8,8 +8,6 @@ window.addEventListener("load", function () {
     const form = document.querySelector("form");
     const list = document.getElementById("faultyItems");
     
-    console.log(list.style.visibility);
-    list.style.visibility = "visible";
     console.log(list.innerText);
     // list.innerText = "Hello"
 
