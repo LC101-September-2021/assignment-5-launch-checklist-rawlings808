@@ -1,31 +1,26 @@
 // Write your JavaScript code here!
 
-
+function newFunction() {
+    module.import; { validateInput; formSubmission; } from; "./scriptHelper.js";
+}
 
 window.addEventListener("load", function () {
-    // const pilotName = document.getElementById("pilotName");
-    // const copilotName = document.getElementById("copilotName");
-    // const fuelLevel = document.getElementById("fuelLevel");
-    // const cargoMass = document.getElementById("cargoMass");
-    // const button = document.getElementById("formSubmit");
-    
-
-    
-    // console.log(form.pilotName.value);
-    // console.log(form.copilotName);
-
     const form = document.querySelector("form");
+    const list = document.getElementById("faultyItems");
+    
+    console.log(list.style.visibility);
+    list.style.visibility = "visible";
+    console.log(list.innerText);
+    // list.innerText = "Hello"
 
     form.addEventListener("submit", function () {
-        console.log("Submitting form");
-        validateInput(form);
-        
+        formSubmission(document, list, form.pilotName.value, form.copilotName.value, form.fuelLevel.value, form.cargoMass.value);
     });
 
+    //     // Make sure to call your formSubmission() function at the appropriate time in your script.js file!
 
 
-
-    
+    //below is part of the program do not delete from let listedPlanets to })
     // let listedPlanets;
     // // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     // let listedPlanetsResponse;
@@ -38,7 +33,3 @@ window.addEventListener("load", function () {
     // })
 
 });
-
-function newFunction() {
-    module.import; { validateInput; } from; "./scriptHelper.js";
-}
