@@ -103,28 +103,15 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
 async function myFetch(planetsUrl) {
     let planetsReturned;
-
     planetsReturned = await fetch(planetsUrl).then(function (response) {
-        //added below lines
-        response.json().then(function (json) {
-            console.log(json);
-
-        });
-        //end of added code
+        return response.json();
     });
-
-    // console.log(planetsReturned);
-
     return planetsReturned;
 };
 
 function pickPlanet(planets) {
-    Math.random();
-}
-
-//pickPlanet() takes in one argument: a list of planets. Using Math.random(), return one planet from the list with a randomly-selected index. 
-//myFetch() has some of the code necessary for fetching planetary JSON, however, it is not complete. You need to add the URL and return response.json().
-
+    return (planets[(Math.floor(Math.random() * planets.length))]);
+};
 
 module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
