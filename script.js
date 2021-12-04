@@ -7,16 +7,17 @@ function newFunction() {
 window.addEventListener("load", function () {
     const form = document.querySelector("form");
     const list = document.getElementById("faultyItems");
+    list.style.visibility = 'hidden';
     
 
     form.addEventListener("submit", function () {
         formSubmission(document, list, form.pilotName.value, form.copilotName.value, form.fuelLevel.value, form.cargoMass.value);
     });
 
-    //     // Make sure to call your formSubmission() function at the appropriate time in your script.js file!
+    
     let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-    let listedPlanetsResponse = myFetch("https://handlers.education.launchcode.org/static/planets.json");
+    let listedPlanetsResponse = myFetch();
 
     listedPlanetsResponse.then(function (result) {
         listedPlanets = result;

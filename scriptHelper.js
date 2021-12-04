@@ -22,7 +22,7 @@ function addDestinationInfo(
                    </ol>
                    <img src="${imageUrl}">
     `
-}
+};
 
 function validateInput(testInput) {
     if (testInput === "") {
@@ -33,8 +33,8 @@ function validateInput(testInput) {
     } else {
         console.log(testInput + " is a Number");
         return "Is a Number";
-    }
-}
+    };
+};
 
 function stopFormSubmission(alertMessage) {
     console.log(alertMessage);
@@ -72,8 +72,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     } else {
         list.style.visibility = "visible";
-        document.getElementById("pilotStatus").textContent = `Pilot ${pilot} ready`;
-        document.getElementById("copilotStatus").textContent = `Co-pilot ${copilot} ready`;
+        document.getElementById("pilotStatus").textContent = `Pilot ${pilot} is ready for launch`;
+        document.getElementById("copilotStatus").textContent = `Co-pilot ${copilot} is ready for launch`;
         let shuttleReady = true;
 
         if (fuelLevelStatus(fuelLevel) === "Fuel level too low.") {
@@ -91,8 +91,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         };
 
         if (shuttleReady === true) {
-            document.getElementById("launchStatus").textContent = "Shuttle is ready for launch";
-            document.getElementById("launchStatus").style.color = "Green";
+            document.getElementById("launchStatus").textContent = "Shuttle is Ready for Launch";
+            document.getElementById("launchStatus").style.color = "rgb(64, 159, 106)";
         };
 
 
@@ -101,9 +101,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
 }
 
-async function myFetch(planetsUrl) {
+async function myFetch() {
     let planetsReturned;
-    planetsReturned = await fetch(planetsUrl).then(function (response) {
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then(function (response) {
         return response.json();
     });
     return planetsReturned;
