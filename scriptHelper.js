@@ -55,7 +55,7 @@ function cargoLevelStatus(cargoLevel) {
         return cargoStatus;
     }
 }
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {    
     if (
         validateInput(pilot) === "Empty" ||
         validateInput(copilot) === "Empty" ||
