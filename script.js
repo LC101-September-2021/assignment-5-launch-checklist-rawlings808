@@ -3,6 +3,7 @@
 function newFunction() {
     module.import; { validateInput; formSubmission; pickPlanet; myFetch; addDestinationInfo; } from; "./scriptHelper.js";
 }
+
 // const window;
 window.addEventListener("load", function () {
     const form = document.querySelector("form");

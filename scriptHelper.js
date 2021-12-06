@@ -40,21 +40,21 @@ function stopFormSubmission(alertMessage) {
     console.log(alertMessage);
     window.alert(alertMessage);
     event.preventDefault();
-}
+};
 function fuelLevelStatus(fuelLevel) {
     if (fuelLevel < 10000) {
         let fuelStatus = "Fuel level too low.";
         stopFormSubmission(fuelStatus);
         return fuelStatus;
-    }
-}
+    };
+};
 function cargoLevelStatus(cargoLevel) {
     if (cargoLevel > 10000) {
         let cargoStatus = "Cargo level too high.";
         stopFormSubmission(cargoStatus);
         return cargoStatus;
-    }
-}
+    };
+};
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {    
     if (
         validateInput(pilot) === "Empty" ||
@@ -81,6 +81,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             document.getElementById("launchStatus").textContent = "Shuttle not ready for launch";
             document.getElementById("launchStatus").style.color = "Red";
             shuttleReady = false;
+        } else {
+            document.getElementById("fuelStatus").textContent = "Fuel level high enough for launch"
         };
 
         if (cargoLevelStatus(cargoLevel) === "Cargo level too high.") {
@@ -88,18 +90,17 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             document.getElementById("launchStatus").textContent = "Shuttle not ready for launch";
             document.getElementById("launchStatus").style.color = "Red";
             shuttleReady = false;
+        } else {
+            document.getElementById("cargoStatus").textContent = "Cargo mass low enough for launch"
         };
 
         if (shuttleReady === true) {
             document.getElementById("launchStatus").textContent = "Shuttle is Ready for Launch";
             document.getElementById("launchStatus").style.color = "rgb(64, 159, 106)";
         };
-
-
-        //remove this later after testing
         event.preventDefault();
-    }
-}
+    };
+};
 
 async function myFetch() {
     let planetsReturned;
