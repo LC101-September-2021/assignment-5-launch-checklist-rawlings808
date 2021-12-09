@@ -1,3 +1,8 @@
+// const { validateInput } = require("./scriptHelper");
+// const { formSubmission } = require("./scriptHelper");
+// const { pickPlanet } = require("./scriptHelper");
+// const { addDestinationInfo } = require("./scriptHelper");
+// const { myFetch } = require("./scriptHelper");
 
 // Write your JavaScript code here!
 function newFunction() {

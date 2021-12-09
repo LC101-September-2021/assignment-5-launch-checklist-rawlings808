@@ -64,11 +64,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     ) {
         stopFormSubmission("All fields are required");
 
-    } else if (validateInput(fuelLevel) === "Not a Number") {
-        stopFormSubmission("Fuel Level must be a number");
-
-    } else if (validateInput(cargoLevel) === "Not a Number") {
-        stopFormSubmission("Cargo Mass must be a number");
+    } else if ((validateInput(pilot) === "Is a Number") || (validateInput(copilot) === "Is a Number")){
+        stopFormSubmission("Pilot or CoPilot cannot be numbers");
+    }
+    
+    else if ((validateInput(fuelLevel) === "Not a Number") || (validateInput(cargoLevel) === "Not a Number")) {
+        stopFormSubmission("Fuel Level and Cargo Mass must be a number");
 
     } else {
         list.style.visibility = "visible";
