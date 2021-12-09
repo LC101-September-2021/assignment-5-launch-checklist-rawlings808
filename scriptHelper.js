@@ -38,7 +38,7 @@ function validateInput(testInput) {
 
 function stopFormSubmission(alertMessage) {
     console.log(alertMessage);
-    window.alert(alertMessage);
+    window.alert(alertMessage);    
     event.preventDefault();
 };
 function fuelLevelStatus(fuelLevel) {
@@ -78,18 +78,18 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         let shuttleReady = true;
 
         if (fuelLevelStatus(fuelLevel) === "Fuel level too low.") {
-            document.getElementById("fuelStatus").textContent = "Not enough fuel for the journey.";
-            document.getElementById("launchStatus").textContent = "Shuttle not ready for launch";
-            document.getElementById("launchStatus").style.color = "Red";
+            document.getElementById("fuelStatus").textContent = "Fuel level too low for launch";
+            document.getElementById("launchStatus").textContent = "Shuttle Not Ready for Launch";
+            document.getElementById("launchStatus").style.color = "rgb(199, 37, 78)";
             shuttleReady = false;
         } else {
             document.getElementById("fuelStatus").textContent = "Fuel level high enough for launch"
         };
 
         if (cargoLevelStatus(cargoLevel) === "Cargo level too high.") {
-            document.getElementById("cargoStatus").textContent = "Cargo mass too high for the journey";
-            document.getElementById("launchStatus").textContent = "Shuttle not ready for launch";
-            document.getElementById("launchStatus").style.color = "Red";
+            document.getElementById("cargoStatus").textContent = "Cargo mass too heavy for launch";
+            document.getElementById("launchStatus").textContent = "Shuttle Not Ready for Launch";
+            document.getElementById("launchStatus").style.color = "rgb(199, 37, 78)";
             shuttleReady = false;
         } else {
             document.getElementById("cargoStatus").textContent = "Cargo mass low enough for launch"
@@ -97,7 +97,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
         if (shuttleReady === true) {
             document.getElementById("launchStatus").textContent = "Shuttle is Ready for Launch";
-            document.getElementById("launchStatus").style.color = "rgb(64, 159, 106)";
+            document.getElementById("launchStatus").style.color = "rgb(65, 159, 106)";
         };
         event.preventDefault();
     };
