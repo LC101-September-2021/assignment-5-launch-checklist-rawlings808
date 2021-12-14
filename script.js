@@ -1,15 +1,7 @@
-// const { validateInput } = require("./scriptHelper");
-// const { formSubmission } = require("./scriptHelper");
-// const { pickPlanet } = require("./scriptHelper");
-// const { addDestinationInfo } = require("./scriptHelper");
-// const { myFetch } = require("./scriptHelper");
-
-// Write your JavaScript code here!
 function newFunction() {
     module.import; { validateInput; formSubmission; pickPlanet; myFetch; addDestinationInfo; } from; "./scriptHelper.js";
 }
 
-// const window;
 window.addEventListener("load", function () {
     const form = document.querySelector("form");
     const list = document.getElementById("faultyItems");
@@ -17,6 +9,7 @@ window.addEventListener("load", function () {
     
 
     form.addEventListener("submit", function () {
+        event.preventDefault();
         formSubmission(document, list, form.pilotName.value, form.copilotName.value, form.fuelLevel.value, form.cargoMass.value);
     });
 
